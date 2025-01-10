@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {SafeAreaView, StyleSheet,  TouchableOpacity, View} from 'react-native'
 import React from 'react' 
 import { colors } from '../constants/color';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
@@ -6,7 +6,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { iconSizes, spacing } from '../constants/dimensions';
 const Header=() =>{
     return (
-      <View>
+      <SafeAreaView style={styles.container}>
         <View style={styles.header}>
           <TouchableOpacity>
             <FontAwesome5
@@ -23,7 +23,7 @@ const Header=() =>{
             />
           </TouchableOpacity>
         </View>
-      </View>
+      </SafeAreaView>
     );
 }
 export default Header;

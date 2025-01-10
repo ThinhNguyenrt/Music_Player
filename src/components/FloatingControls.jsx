@@ -14,9 +14,10 @@ export const GoBackButton=()=>{
     );
 }
 export const PlayButton=()=>{
+    const isPlaying= true;
     return(
         <TouchableOpacity>
-            <Feather name="pause" 
+            <Feather name={isPlaying ? "pause": "play"} 
             size={iconSizes.md} 
             color={colors.iconPrimary} />
         </TouchableOpacity>
@@ -26,7 +27,7 @@ export const PlayButton=()=>{
 export const GoForwardButton=()=>{
     return(
         <TouchableOpacity>
-            <AntDesign name="forward" 
+            <AntDesign name="stepforward" 
             size={iconSizes.md} 
             color={colors.iconPrimary}
             />
