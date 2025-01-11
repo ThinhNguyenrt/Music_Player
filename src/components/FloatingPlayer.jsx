@@ -4,14 +4,22 @@ import Slider from "@react-native-community/slider";
 import { colors } from "../constants/color";
 import { fontSize, spacing } from "../constants/dimensions";
 import { GoBackButton, GoForwardButton, PlayButton } from "./FloatingControls";
+import { useNavigation } from "@react-navigation/native";
 
 const imageUrl = "https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/815/325x325/what-you-did-1733792458-vYVprGNPBu.png";
 
 const FloatingPlayer = () => {
+  const navigation = useNavigation();
   const [progress, setProgress] = useState(0); // Giá trị thanh trượt (0 -> 1)
-
+  const handleOpenPlayerScreen =()=>{
+    navigation.navigate("PLAYER-SCREEN");
+  }
   return (
-    <TouchableOpacity style={styles.container} activeOpacity={0.85}>
+    <TouchableOpacity 
+      style={styles.container} 
+      activeOpacity={0.85}
+      onPress={handleOpenPlayerScreen}
+      >
       <Image source={{ uri: imageUrl }} style={styles.coverImage} />
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Chalk and Dust</Text>
